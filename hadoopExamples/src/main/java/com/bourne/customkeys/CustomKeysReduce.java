@@ -19,7 +19,12 @@ public class CustomKeysReduce extends Reducer<CustomKeys, Text, Text, LongWritab
 			pages++;
 		}
 		
-		key = keys.getFirst();
+		String key1 = keys.getFirst().toString();
+		String key2 = keys.getSecond().toString();
+		
+		String key3 = key1 +key2;
+		
+		key.set(key3);
 
 		pageViews.set(pages);
 		context.write(key, pageViews);
